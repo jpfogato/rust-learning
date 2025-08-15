@@ -1,0 +1,1 @@
+rustup doc -> displays the rustup documentation on local browser.
