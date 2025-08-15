@@ -3,3 +3,6 @@ I created this repo to use as a live learning guide while I follow the content o
 I intend to push updates as soon as chapters or subchapters are completed, with chapter notes under each each chapter number.
 
 The goal is to finish the book and all exercises in it (including the optional ones).
+
+A Cargo.toml is initialize at .\ so we can use rust-analyzer VSCode extension.
+All repositories initialized with `cargo` will allo for this extension's feature.
