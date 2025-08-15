@@ -1,1 +1,13 @@
 rustup doc -> displays the rustup documentation on local browser.
+
+rust-analyzer on VSCode will only activate if:
+
+    workspaceContains:Cargo.toml
+    workspaceContains:*/Cargo.toml
+    workspaceContains:rust-project.json
+    workspaceContains:*/rust-project.json
+    workspaceContains:.rust-project.json
+    workspaceContains:*/.rust-project.json
+
+Rust is an ahead-of-time compiled language, meaning you can compile a program and give the executable to someone else, and they can run it even without having Rust installed
+
