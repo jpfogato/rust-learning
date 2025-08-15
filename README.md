@@ -1,3 +1,5 @@
-I created this repo to use as a live learning guide while I follow the content of (https://doc.rust-lang.org/book/title-page.html#the-rust-programming-language)["The Rust Programming Language Book"] by by Steve Klabnik, Carol Nichols, and Chris Krycho, with contributions from the Rust Community.
+I created this repo to use as a live learning guide while I follow the content of [The Rust Programming Language Book](https://rust-book.cs.brown.edu/experiment-intro.html) by by Steve Klabnik, Carol Nichols, and Chris Krycho, with contributions from the Rust Community, more specifically the interactive version with quizzes and notes.
 
 I intend to push updates as soon as chapters or subchapters are completed, with chapter notes under each each chapter number.
+
+The goal is to finish the book and all exercises in it (including the optional ones).
