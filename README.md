@@ -6,3 +6,10 @@ The goal is to finish the book and all exercises in it (including the optional o
 
 A Cargo.toml is initialize at .\ so we can use rust-analyzer VSCode extension.
 All repositories initialized with `cargo` will allo for this extension's feature.
+
+Other extensions to setup VSCode env:
+- rust-analyzer
+- codelldb
+- even better toml
+- dependi -> dependency manager
+- error lens -> better source code error highlighting
