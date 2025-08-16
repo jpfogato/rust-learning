@@ -11,3 +11,16 @@ rust-analyzer on VSCode will only activate if:
 
 Rust is an ahead-of-time compiled language, meaning you can compile a program and give the executable to someone else, and they can run it even without having Rust installed
 
+cargo new creates a new repository initializing git in the process, unless already part of a git repo
+packages of code are referred to as "crates"
+cargo expects the source files to live under src directory
+Cargo.lock keeps track of the exact versions of dependencies used in the project
+cargo build just builds
+cargo run builds + runs 
+cargo check just checks your source code to ensure it is compillable
+directory for the debug binary is: target/debug
+cargo is OS-agnostic
+
+to build for release:
+carbo build --release
+always benchmark the release software as it is optimized when compilling vs just using "cargo build"
