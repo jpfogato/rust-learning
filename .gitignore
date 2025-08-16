@@ -1,3 +1,32 @@
-target/
+# ---- Rust / Cargo ----
+/target/
+/debug/
+/release/
+
+# ---- Build Artifacts ----
 *.exe
-get-dependencies/
+*.dll
+*.so
+*.dylib
+
+# ---- Logs and Temporary Files ----
+*.log
+*.tmp
+*.swp
+*.swo
+
+# ---- IDE / Editor Settings ----
+# VS Code
+.vscode/
+
+# IntelliJ / CLion / RustRover
+.idea/
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+# ---- OS-specific ----
+# Windows
+Thumbs.db
+ehthumbs.db
