@@ -1,3 +1,33 @@
 Simple notes for chapter 2
 
 cargo run is ideal for quick testing
+
+from the root of the repository, you can run
+    cargo run --bin <binary_name>
+to run an specific compilation of the repository
+if what you need to use is not in the prelude (standard library), it needs to be declared via "use" statemente
+
+variables are immutable by -> DEFAULT <- 
+    mut statement changes that default behavior
+
+To comment, use //
+
+:: means that the element after it is an associated function of that type
+new is a common function associated to many types, since it is a common task to generate a new of something
+
+let mut guess = String::new();
+-> creates a mutable variable that is bound to an empty instance of the String type.
+
+when updating a value from a referenced item (items with &), you need to also add the "mut" statement so the value of the original instance can be updated via its reference
+
+if you see when compilling:
+
+    warning: unused `Result` that must be used
+
+it means that an ".expect()" method was not called for a function that can potentially return an error.
+
+cargo understands "Semantic Versioning" (SemVer)
+cargo update will update the crates version you configured in your Cargo.toml file until the last available bugfix for that MINOR release. ex: from 0.8.1 to 0.8.5; but never incrementing the minor nor major numbers.
+
+generate documentation for the used crates via:
+    cargo doc --open
