@@ -1,0 +1,3 @@
+Simple notes for chapter 2
+
+cargo run is ideal for quick testing

@@ -1,4 +1,8 @@
 [workspace]
+
 members = [
-    "chapter_1/1.3_hello_cargo"
-]
+    "chapter_1/hello_cargo", 
+    "chapter_2/guessing_game"
+    ]
+resolver = "3"
+

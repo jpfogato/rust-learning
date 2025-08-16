@@ -18,6 +18,7 @@
 # ---- IDE / Editor Settings ----
 # VS Code
 .vscode/
+/.vscode/
 
 # IntelliJ / CLion / RustRover
 .idea/
