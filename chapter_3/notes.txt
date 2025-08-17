@@ -1,0 +1,2 @@
+it is important to learn the keywords. They are here:
+https://doc.rust-lang.org/book/appendix-01-keywords.html

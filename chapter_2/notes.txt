@@ -31,3 +31,13 @@ cargo update will update the crates version you configured in your Cargo.toml fi
 
 generate documentation for the used crates via:
     cargo doc --open
+
+since rust is static typed, we cannot compare a string to a number type
+
+"shadowing" allows us to use the same variable NAME while converting it to a different type.
+
+"panicked at chapter_2\guessing_game\src\main.rs:23:47"
+    23 is the line
+    47 is the colum. This is useful to tell where the error is happening
+
+when using loop, if "continue" is found, this iteration is terminated and the rest of the code in the loop does not run.
