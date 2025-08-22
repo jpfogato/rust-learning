@@ -1,2 +1,43 @@
 it is important to learn the keywords. They are here:
 https://doc.rust-lang.org/book/appendix-01-keywords.html
+
+Differences between a constant and a variable
+    Constants are not allowed to be mutable
+    Constant declaration: const
+    Variable declaration: let
+    Type of the value for a constant MUST be annotated (const CONSTANT : <Type> = "value";)
+
+Rust’s naming convention for constants is to use all uppercase with underscores between words
+
+Shadowing a variable in an inner scope, does not mutate its value in an outer scope
+
+Rust is a statically typed language, which means that it must know the types of all variables at compile time
+
+To get a very detailed explanation of an error detected at compile time we can use:
+    rustc --explain <ERROR_CODE>
+
+Rust has four primary scalar types:
+- integers: 
+    - number without a fractional component (i or u -> 8, 16, 32, 64, 128 bits).
+    - Integer literals support decimal, hex, octal, binary and byte notations
+    - consider explicitly handling overflows when manipulating integers by using these methods:
+        Example: adding 10 to 250 results in an overflow
+        wrapping_* -> wrapping_add: 250 + 10 = 4
+        checked_* -> checked_add: overflow!
+        overflowing_* -> overflowing_add: 4, overflow? true
+        staurating_* -> saturating_add: 255
+    - division truncates toward zero to the nearest integer
+
+- floating-point numbers: 
+    - numbers with decimal points (f32 and f64 (default))
+    - all operators allowed in Rust are described here: https://doc.rust-lang.org/book/appendix-02-operators.html
+    
+- Booleans
+    - one byte in size
+    - specified using bool, values: true, false
+
+- characters
+    - the language’s most primitive alphabetic type
+    - char type is four bytes in size and represents a Unicode scalar value
+
+-------- CONTINUE ON: Compound Types (https://rust-book.cs.brown.edu/ch03-02-data-types.html)
