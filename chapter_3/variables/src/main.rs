@@ -16,7 +16,7 @@ fn main() {
         println!("The original value of y (out of the scope) is: {y}");
 
 
-        let mut z: u32 = 1;
+        let z: u32 = 1;
         {
                 let mut z = z;
                 z += 2;
