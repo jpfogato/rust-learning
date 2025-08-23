@@ -1,6 +1,8 @@
 it is important to learn the keywords. They are here:
 https://doc.rust-lang.org/book/appendix-01-keywords.html
 
+## 3.1 Variables
+
 Differences between a constant and a variable
     Constants are not allowed to be mutable
     Constant declaration: const
@@ -15,6 +17,8 @@ Rust is a statically typed language, which means that it must know the types of 
 
 To get a very detailed explanation of an error detected at compile time we can use:
     rustc --explain <ERROR_CODE>
+
+## 3.2 Data Types
 
 Rust has four primary scalar types:
 - integers: 
@@ -40,4 +44,16 @@ Rust has four primary scalar types:
     - the language’s most primitive alphabetic type
     - char type is four bytes in size and represents a Unicode scalar value
 
--------- CONTINUE ON: Compound Types (https://rust-book.cs.brown.edu/ch03-02-data-types.html)
+Rust has two primitive compound types:
+- Tuple:
+    - general way of grouping together various types into one compound type
+    - they cannot grow or shrink after declaration
+    - expressions implicitly return the unit value (a tuple with nothing in it) if they don’t return any other value
+
+- Array:
+    - groups variables of the same type
+    - must have a fixed length
+    - arrays are stored at the stack. Vectors are stored in the heap -> vectors can grow or shrink. Arrays cannot
+    - if you don't know if you need a vector an array, you probably need a vector
+
+## 3.3 Functions
