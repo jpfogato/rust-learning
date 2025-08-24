@@ -2,6 +2,8 @@
 /target/
 /debug/
 /release/
+/get-dependencies
+get-dependencies
 
 # ---- Build Artifacts ----
 *.exe
@@ -31,3 +33,5 @@
 # Windows
 Thumbs.db
 ehthumbs.db
+
+
