@@ -57,3 +57,21 @@ Rust has two primitive compound types:
     - if you don't know if you need a vector an array, you probably need a vector
 
 ## 3.3 Functions
+
+Rust code uses snake case as the conventional style for function and variable names, in which all letters are lowercase and underscores separate words.
+
+Rust doesn’t care where you define your functions, only that they’re defined somewhere in a scope that can be seen by the caller
+
+Parameters (arguments) are variables that are part of a function's signature
+
+It is required to declare the parameter types in the function signature.
+
+Rust is an expression-based language:
+    - Statements are instructions that perform some action and do not return a value. This means you cannot assign a statement to a variable.
+    - Expressions evaluate to a resultant value. They do not include ending semicolons. If you add a semicolon to the end of an expression, you turn it into a statement, and it will then not return a value.
+
+Return values types are specified in the signature with an arrow ->
+
+We can return a function early by calling "return" keyword.
+
+The value returned by the function is the latest expression evaluated if not explicitly told otherwise
