@@ -45,7 +45,7 @@ fn five() -> i32{
 }
 
 fn increment(x: i32) -> i32{
-        x + 1 // if a ; is added here, we will get E0308: mismatched types
+        x + 1 // if a ";" is added here, we will get E0308: mismatched types
 }
 
 /*

@@ -75,3 +75,34 @@ Return values types are specified in the signature with an arrow ->
 We can return a function early by calling "return" keyword.
 
 The value returned by the function is the latest expression evaluated if not explicitly told otherwise
+
+## 3.4 Comments
+
+Compiller ignores it and they are not included in the binaries.
+Single line syntax: // single line comment
+Multiple line syntax: /* <comments spamming multiple lines> */
+
+Place comments above the code it is annotating.
+
+This section does not includes a source code.
+
+## 3.5  Control Flow
+
+
+### if
+
+If expressions allows for branching of code depending on conditions.
+The block of code to execute if "true" goes immediately after the "if" condition.
+If no option to execute code with an "else" condition, the "if" block is skipped if the condition is "false".
+The condition MUST be of a bool type. If this happens, the compiller throws this error: error[E0308]: mismatched types (expected `bool`, found integer)
+If a condition is evaluated to "true", the block of code associated with it executes and the program exits the "if" block, so if more than one of the arms would evaluate to "true", only the first called will be executed.
+If the code contains more than ONE "else if" a refactoring is suggested. In this case, use the "match" construct (chapter 6).
+Because if is an expression, we can use it in the right side of a statement to assign a value conditionally. Values that have the potential of being results of the if statement must be of the same type!
+
+### loop
+
+loop keyword executes a block of code forever or until rust is told otherwise.
+To exit a loop, use the "break" or the "continue" keywords.
+use a single quote to lable to loop so it can be closed from nested loops conditionally
+
+(CONTINUE AT: Conditional Loops with while)
