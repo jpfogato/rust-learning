@@ -6,6 +6,6 @@ members = [
     "chapter_3/branches",
     "chapter_3/functions",
     "chapter_3/repetition",
-    "chapter_3/variables"]
+    "chapter_3/variables", "sample_projects/temp_converter"]
 resolver = "3"
 

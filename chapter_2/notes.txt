@@ -41,3 +41,6 @@ since rust is static typed, we cannot compare a string to a number type
     47 is the colum. This is useful to tell where the error is happening
 
 when using loop, if "continue" is found, this iteration is terminated and the rest of the code in the loop does not run.
+
+
+Rust requires all arms of a match expression to return the same type
