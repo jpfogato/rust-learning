@@ -87,7 +87,7 @@ fn main() {
 
 
                 let converted_temperature = convert_temperature(option, temp_input);
-                println!("converted temperature: {converted_temperature} degrees {temp_string}");
+                println!("converted temperature: {converted_temperature} degrees");
         }                  
 }
                 
