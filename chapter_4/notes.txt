@@ -1,0 +1,32 @@
+Ownership
+
+It enables Rust to make memory safety guarantees without needing a garbage collector
+Safety is the absence of undefined behavior!
+Rust’s goal is to compile programs into efficient binaries that require as few runtime checks as possible.
+Rust does not check for variable definitions at run-time. Instead it validates the program at compile-time.
+Rust does not allow you to interpret memory as an array of bytes
+
+Variables live in the Stack within "frames".
+A frame is a mapping from variables to values within a single scope, such as a function.
+After a function returns, Rust deallocates the function’s frame (freeing or dropping).
+
+Boxes live in the Heap.
+Heap data is not tied to a specific stack frame.
+
+The stack holds data associated with a specific function, while the heap holds data that can outlive a function
+
+Rust Does Not Permit Manual Memory Management
+There are no "free" keywords to be used as it is unsafe to try to read a pointer to an address that have been deallocated
+
+Box deallocation principle: If a variable owns a box, when Rust deallocates the variable’s frame, then Rust deallocates the box’s heap memory associated with it.
+
+Boxes are used by Rust data structures1 like Vec, String, and HashMap to hold a variable number of elements.
+
+Moved heap data principle: if a variable x moves ownership of heap data to another variable y, then x cannot be used after the move.
+
+Ownership is primarily a discipline of heap management:
+
+        -> All heap data must be owned by exactly one variable.
+        -> Rust deallocates heap data once its owner goes out of scope.
+        -> Ownership can be transferred by moves, which happen on assignments and function calls.
+        -> Heap data can only be accessed through its current owner, not a previous owner.
