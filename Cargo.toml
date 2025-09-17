@@ -7,7 +7,7 @@ members = [
     "chapter_3/functions",
     "chapter_3/repetition",
     "chapter_3/variables",
-    "chapter_4/ownership",
+    "chapter_4/ownership", "chapter_4/refs_and_borrowing",
     "exercise_projects/temp_converter"]
 resolver = "3"
 

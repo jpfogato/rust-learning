@@ -30,3 +30,24 @@ Ownership is primarily a discipline of heap management:
         -> Rust deallocates heap data once its owner goes out of scope.
         -> Ownership can be transferred by moves, which happen on assignments and function calls.
         -> Heap data can only be accessed through its current owner, not a previous owner.
+
+## References and Borrowing
+
+Ownership can be moved from the original variable on main to a called function, which are then removed from the stack since they transferred the ownership of the heap memory associated with them to the input parameters of the function called. To avoid that, we can use references (&).
+
+This is also known as "borrowing"
+
+Referrences are non-owning pointers because they do not own the data they point to
+
+Dereferences use the "*" operator
+
+Rust implicitly inserts dereferences and references in certain cases, such as calling a method with the dot operator
+
+Rust Avoids Simultaneous Aliasing and Mutation
+
+For instance: If a reference to a Vec index is created and later this Vec recieves a .push(), the original pointer is dropped because Rust has to allocate new memory, copy the data to this new location, and -> drop the original heap allocation!! <- so any variables that were using a pointer to this Vec via '&v[index]' becomes invalid after a push since the pointer is freed.
+
+Pointer Safety Principle: data should never be aliased and mutated at the same time.
+
+Continue from here:
+https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html#references-change-permissions-on-places
