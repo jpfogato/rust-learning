@@ -49,5 +49,46 @@ For instance: If a reference to a Vec index is created and later this Vec reciev
 
 Pointer Safety Principle: data should never be aliased and mutated at the same time.
 
+
+Variables have three kinds of permissons on their data:
+        -> Read (R): Data can be copied to another location
+        -> Write (W): Data can be mutated
+        -> Own (O): Data can be moved or dropped
+        -> Flow (F): Expected whenever an expression uses an input our output reference, like &...
+
+These permissions DO NOT EXISTS AT RUN-TIME, only within the compiller
+
+Default behavior: R+O
+If annotated with 'let mut', then it has: R+O+W
+
+A reference can temporarily remove these permissions
+
+Permissions are defined on places, not just variables. A place is anything you can put on the left hand of an assignment, such as:
+        - variables (x)
+        - dereferences of places (*x)
+        - array accesses of places (x[0])
+        - fields of places (x.0 for tuples or a.field for structs)
+        - any combination of the above: *((*a)[0].1)
+
+mutable references: &mut
+
+Data Must Outlive All Of Its References
+
+input/output references are treated differently than references within a function body
+Rust uses a different mechanism, the F permission, to check the safety of those references.
+
+returns of references to a local variables that gets destroyed when the function ends is unsafe
+
+All variables can read, own, and (optionally) write their data.
+Creating a reference will transfer permissions from the borrowed place to the reference.
+Permissions are returned once the reference’s lifetime has ended.
+Data must outlive all references that point to it.
+
+fn example_fn(a: String, b: &str, c: &mut str) {}
+The example_fn above has:
+        -> a: a moving of ownership from the variable that calls this function to the function itself
+        -> b: a read ownly borrow of a variable of type str
+        -> c: a mutable borrow of a variable of type str
+
 Continue from here:
-https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html#references-change-permissions-on-places
+https://rust-book.cs.brown.edu/ch04-03-fixing-ownership-errors.html

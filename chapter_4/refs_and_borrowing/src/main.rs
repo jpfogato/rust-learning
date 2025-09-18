@@ -42,9 +42,25 @@ fn main() {
                 assert_eq!(s_len1, s_len2);
         }
 
+        let capitalize = String::from("capitalized");
+        let mut capitalize_vec:Vec<char> = capitalize.chars().collect();
+        ascii_capitalize(&mut capitalize_vec);
+
+        println!("{:?}", capitalize_vec);
+
 
 }
 
 fn greet (g1: &String, g2: &String){
         println!("{} {}", g1, g2);
+}
+
+fn ascii_capitalize(v: &mut Vec<char>) {
+    let c = &v[0];
+    if c.is_ascii_lowercase() {
+        let up = c.to_ascii_uppercase();
+        v[0] = up;
+    } else {
+        println!("Already capitalized: {:?}", v);
+    }
 }
