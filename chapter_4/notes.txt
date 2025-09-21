@@ -90,5 +90,16 @@ The example_fn above has:
         -> b: a read ownly borrow of a variable of type str
         -> c: a mutable borrow of a variable of type str
 
+### Ownership errors
+
+Functions should not mutate their inputs if the caller would not expect it
+A stack frame cannot have its lifetime extended
+If a value does not own heap data, then it can be copied without a move:
+        - An i32 does not own heap data, so it can be copied without a move.
+        - A String does own heap data, so it can not be copied without a move.
+        - An &String does not own heap data, so it can be copied without a move.
+
+Unsafe blocks allow the use of “raw” pointers, which are not checked for safety by the borrow checker
+
 Continue from here:
-https://rust-book.cs.brown.edu/ch04-03-fixing-ownership-errors.html
+https://rust-book.cs.brown.edu/ch04-04-slices.html

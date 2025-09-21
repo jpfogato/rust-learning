@@ -12,8 +12,7 @@ fn main() {
         let mut input: String = String::new();
         io::stdin().read_line(&mut input).expect("invalid input");
         let input = input.trim();
-        let n: u32 = match input
-                .parse(){
+        let n: u32 = match input.parse(){
                         Ok(n) => n,
                         Err(_) => {
                                 println!("Value is not a number");
@@ -26,19 +25,19 @@ fn main() {
 }
 
 fn fibonacci(n: u32) -> u32 {
-    if n == 0 {
-        return 0;
-    } else if n == 1 {
-        return 1;
-    }
+        if n == 0 {
+                return 0;
+        } else if n == 1 {
+                return 1;
+        }
     
-    let mut a = 0;
-    let mut b = 1;
-    
-    for _ in 2..=n {
-        let next = a + b;
-        a = b;
-        b = next;
-    }
-    b
+        let mut a = 0;
+        let mut b = 1;
+
+        for _ in 2..=n {
+                let next = a + b;
+                a = b;
+                b = next;
+        }
+        b
 }
