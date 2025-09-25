@@ -101,5 +101,26 @@ If a value does not own heap data, then it can be copied without a move:
 
 Unsafe blocks allow the use of “raw” pointers, which are not checked for safety by the borrow checker
 
+## Slice Type
+
+allow reference a contiguous sequence from a collection, without referencing the whole collection -> non-owning pointer
+
+We create slices using a range within brackets by specifying [starting_index..ending_index]
+
+these are equal: 
+        _ = &s[0..2];
+        _ = &s[..2];
+
+
+these are also equal (let len = s.len();)
+
+        _ = &s[0..len];
+        _ = &s[..];
+
+Because slices are references, they also change the permissions on referenced data. If a string is referenced, the original variable loses W and O permissions to itself.
+
+The type &String is a normal reference consisting of a single pointer, so 8 bytes on a 64-bit architecture. The type &str is a special slice reference which consists of a pointer and a length, so 16 bytes. 
+
+
 Continue from here:
-https://rust-book.cs.brown.edu/ch04-04-slices.html
+https://rust-book.cs.brown.edu/ch04-05-ownership-recap.html
