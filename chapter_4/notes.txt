@@ -122,5 +122,17 @@ Because slices are references, they also change the permissions on referenced da
 The type &String is a normal reference consisting of a single pointer, so 8 bytes on a 64-bit architecture. The type &str is a special slice reference which consists of a pointer and a length, so 16 bytes. 
 
 
-Continue from here:
-https://rust-book.cs.brown.edu/ch04-05-ownership-recap.html
+----------
+
+Review: 
+
+The point of this example is to say: if Rust is not your first language, then you already have experience working with memory and pointers! Rust just makes those concepts explicit. This has the dual benefit of (1) improving runtime performance by avoiding garbage collection, and (2) improving predictability by preventing accidental “leaks” of data.
+
+By adding a * to the variable you are trying to use, we are actually pointing to the heap allocation of that data, not to the stack pointer!
+
+Borrowing a variable (creating a reference to it) temporarily removes some of the variable’s permissions
+An immutable borrow creates an immutable reference, and also disables the borrowed data from being mutated or moved
+
+Mutating an immutable reference is not ok
+Mutating the immutably borrowed data is not ok
+Moving data out of the reference is not ok

@@ -12,6 +12,6 @@ members = [
     "chapter_4/refs_and_borrowing",
     "exercise_projects/fibonacci",
     "exercise_projects/temp_converter",
-    "chapter_4/slice_type"]
+    "chapter_4/slice_type", "chapter_5/struct_intro"]
 resolver = "3"
 

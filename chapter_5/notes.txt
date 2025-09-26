@@ -1,0 +1,4 @@
+Comparing against Tuples, structs are more flexible because we don’t have to rely on the order of the data to specify or access the values of an instance
+
+A struct’s name should describe the significance of the pieces of data being grouped together
+
