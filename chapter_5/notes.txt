@@ -1,4 +1,11 @@
 Comparing against Tuples, structs are more flexible because we don’t have to rely on the order of the data to specify or access the values of an instance
 
 A struct’s name should describe the significance of the pieces of data being grouped together
+Use the "struct update syntax '..'" to create a new instance of the struct that have most of the same values from another instance
+
+Rust also supports structs that look similar to tuples, called tuple structs
+
+We use structs to add meaning by labeling the data
+
+using a ":?" inside a println! macro tells Rust we want to use the debug format for printing
 
