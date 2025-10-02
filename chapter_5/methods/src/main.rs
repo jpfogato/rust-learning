@@ -4,7 +4,7 @@ struct Rectangle {
     height: u32,
 }
 
-impl Rectangle{
+impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
@@ -16,20 +16,23 @@ impl Rectangle{
     }
 
     fn square(size: u32) -> Self {
-        // this is an associated function. It Returns a 'square' from type Rectangle        
-        Self { width: size, height: size }
+        // this is an associated function. It Returns a 'square' from type Rectangle
+        Self {
+            width: size,
+            height: size,
+        }
     }
 
     // set_width needs a mutable reference to self as it will change the value of the instance when called.
-    fn set_width(&mut self, width: u32){
+    fn set_width(&mut self, width: u32) {
         self.width = width;
     }
 
     // the method max moves 'self' from the instance itself to the caller when it is returned, so downstream references of the initial instance becomes invalid
     fn max(self, other: Rectangle) -> Rectangle {
-        Rectangle { 
+        Rectangle {
             width: self.width.max(other.width),
-            height: self.height.max(other.height) 
+            height: self.height.max(other.height),
         }
     }
 }
@@ -40,17 +43,17 @@ fn main() {
         height: 50,
     };
 
-    let rect2= Rectangle{
+    let rect2 = Rectangle {
         width: 10,
-        height: 40
+        height: 40,
     };
 
-    let rect3 = Rectangle{
+    let rect3 = Rectangle {
         width: 60,
         height: 45,
     };
 
-    println!("The area of the rect1 is {} sq pixels", {rect1.area()});
+    println!("The area of the rect1 is {} sq pixels", { rect1.area() });
     println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
     println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
 
@@ -60,7 +63,7 @@ fn main() {
 
     let mut rect4 = Rectangle {
         width: 20,
-        height: 40
+        height: 40,
     };
 
     println!("rect4 width was {}", rect4.width);
@@ -72,5 +75,4 @@ fn main() {
     dbg!(&rect1);
     let rect1 = rect1.max(rect3);
     dbg!(&rect1);
-
 }

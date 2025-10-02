@@ -1,0 +1,27 @@
+
+Enums allows for definition of a type by enumerating its possible Variants
+Encodes meaning along with data
+Enum values can only be one of its variants
+
+Enum variants can have their own associated data type
+
+There’s another advantage to using an enum rather than a struct: each variant can have different types and amounts of associated data
+
+We can put any kind of data inside an enum variant: strings, numeric types, structs, etc...
+
+We’re also able to define methods on enums
+
+The Option type (availabe in the standard library) encodes the very common scenario in which a value could be something or it could be nothing
+
+Rust doesn’t have the null feature that many other languages have. Null is a value that means there is no value there.
+
+The Option<T> enum is so useful that it’s even included in the prelude; you don’t need to bring it into scope explicitly. Its variants are also included in the prelude: you can use Some and None directly without the Option:: prefix. The Option<T> enum is still just a regular enum, and Some(T) and None are still variants of type Option<T>.
+
+<T> means that the Some variant of the Option enum can hold one piece of data of any type, and that each concrete type that gets used in place of T makes the overall Option<T> type a different type
+
+We have to convert an Option<T> to a T before you can perform T operations with it
+Everywhere that a value has a type that isn’t an Option<T>, you can safely assume that the value isn’t null
+
+Read Option documentation to understand its methods:
+https://doc.rust-lang.org/std/option/enum.Option.html
+
