@@ -14,6 +14,6 @@ members = [
     "exercise_projects/temp_converter",
     "chapter_4/slice_type",
     "chapter_5/struct_intro",
-    "chapter_5/rectangles", "chapter_5/methods", "chapter_6/enums"]
+    "chapter_5/rectangles", "chapter_5/methods", "chapter_6/enums", "chapter_6/match_op"]
 resolver = "3"
 

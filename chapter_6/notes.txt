@@ -25,3 +25,10 @@ Everywhere that a value has a type that isn’t an Option<T>, you can safely ass
 Read Option documentation to understand its methods:
 https://doc.rust-lang.org/std/option/enum.Option.html
 
+match allows to compare a value against a series of patterns and then execute code based on which pattern matches. 
+
+first pattern the value “fits,” the value falls into the associated code block to be used during execution
+
+match arms can bind to the parts of the values that match the pattern. This is how we can extract values out of enum variants
+
+If an enum contains non-copyable data like a String, then you should be careful with whether a match will move or borrow that data
