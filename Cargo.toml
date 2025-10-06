@@ -10,10 +10,15 @@ members = [
     "chapter_4/fixing",
     "chapter_4/ownership",
     "chapter_4/refs_and_borrowing",
-    "exercise_projects/fibonacci",
-    "exercise_projects/temp_converter",
+    "exercises/other_projects/fibonacci",
+    "exercises/other_projects/temp_converter",
     "chapter_4/slice_type",
     "chapter_5/struct_intro",
-    "chapter_5/rectangles", "chapter_5/methods", "chapter_6/enums", "chapter_6/match_op"]
+    "chapter_5/rectangles",
+    "chapter_5/methods",
+    "chapter_6/enums",
+    "chapter_6/match_op",
+    "exercises/rustlings"]
+
 resolver = "3"
 
