@@ -32,3 +32,5 @@ first pattern the value “fits,” the value falls into the associated code blo
 match arms can bind to the parts of the values that match the pattern. This is how we can extract values out of enum variants
 
 If an enum contains non-copyable data like a String, then you should be careful with whether a match will move or borrow that data
+
+if let statements allow us to compare against Some and execute code based on weater the value is valid or not None. It is syntax sugar for a "match" statement
