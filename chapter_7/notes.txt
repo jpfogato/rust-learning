@@ -1,0 +1,40 @@
+A package can contain multiple binary crates and one optional library crate
+As a package grows, we can extract parts into separate crates that become external dependencies.
+
+Cargo provides workspaces -> chapter 14.
+
+This chapter also discusses encapsulation and public interfaces.
+The way we write code defines which parts are public for other code to use.
+
+We can create scopes and change which names are in or out of it. It is not possible to have two different items with the same name in the same scope.
+
+"The module system" includes:
+- Packages:  A cargo feature to build, test and share crates
+- Crates: A tree of modules that produces a library or an executable
+- Modules and use: controls the organization, scope and privacy of paths
+- Paths: A way of naming an item, such as a struct, function or module
+
+A Crate is the smallest amount of code that the Rust compiler considers at a time. The .rs files we written so far, are considered crates for the compiler.
+
+Crates can contain modules, and modules may be defined in other files that get compiled with the crate.
+
+Binary crate: programs we can compile to an executable that we can run. Must have a fn main () {}
+Library crate: don't have fn main (){} and don't produce an executable. Define functionality intended to be shared with multiple projects.
+
+Crate root is a source file that the Rust compiler starts from to make the executable
+
+A Package is a bundle of one or more crages that provides a set of functionality.
+Contains: 
+- Cargo.toml: Describes how to build those crates
+- Crate: application or library
+
+A package must contain at least one crate, either binary or library type
+
+Cargo follows a convention that src/main.rs is the crate root of a binary crate with the same name as the package.
+This is the same case if the same directory contains lib.rs instead, which tells Cargo that it contains a library crate.
+
+A package (like this repository) can have multiple binary crates.
+File naming convention:
+- main.rs: binary crate 
+- lib.rs: library crate
+- alt.rs: binary crate
