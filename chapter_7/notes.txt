@@ -38,3 +38,37 @@ File naming convention:
 - main.rs: binary crate 
 - lib.rs: library crate
 - alt.rs: binary crate
+
+parts of the module system = paths
+use keyword brings a path into scope
+
+use chapter 7.2 as a reminder for how modules work
+
+Declaring modules:
+Declaration only happens at crate root.
+when: "use garden", compiller will look for the module at:
+- 1st: right after "use garden", within {}
+- 2nd: src/garden.rs
+- 3rd: src/garden/mod.rs
+
+Declaring submodules:
+Declaration can happen anywhere other than crate root
+when declaring "vegetables" as a "garden" submodule, the compiler will look for the submodule's code at:
+- 1st: right after "use vegetables" declaration within {}
+- 2nd: in the file src/garden/vegetables.rs
+- 3rd: in the file src/garden/vegetables/mod.rs
+
+crate::garden::vegetables::*
+
+Code within a module is private from its parent's modules by default.
+use "pub" to expose it.
+
+Keyword "use" has the goal of reducing paths of imports. Instead of:
+
+crate::garden::vegetables::Asparagus."code", we can do:
+
+use crate::garden::vegetables::Asparagus, and from them onwards, call Aspargus' code by:
+
+Asparagus."code"
+
+
