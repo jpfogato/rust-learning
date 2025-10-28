@@ -46,7 +46,7 @@ use chapter 7.2 as a reminder for how modules work
 
 Declaring modules:
 Declaration only happens at crate root.
-when: "use garden", compiller will look for the module at:
+when: "use garden", compiller will look for the module at: 
 - 1st: right after "use garden", within {}
 - 2nd: src/garden.rs
 - 3rd: src/garden/mod.rs
@@ -56,7 +56,7 @@ Declaration can happen anywhere other than crate root
 when declaring "vegetables" as a "garden" submodule, the compiler will look for the submodule's code at:
 - 1st: right after "use vegetables" declaration within {}
 - 2nd: in the file src/garden/vegetables.rs
-- 3rd: in the file src/garden/vegetables/mod.rs
+- 3rd: in the file src/garden/vegetables/mod.rs 
 
 crate::garden::vegetables::*
 
@@ -71,4 +71,21 @@ use crate::garden::vegetables::Asparagus, and from them onwards, call Aspargus' 
 
 Asparagus."code"
 
+By grouping modules together, programmers can navigate the code by the module definitions, instead of having to read through all definitions
 
+To call a function from a module, we need to know its path
+
+It is preffered to use absolute paths for calling module's code as it is more likely we'll want to move code definitions and item calls independently of each other.
+
+use:
+
+cargo build -p|--package package_name to build a library-only cargo
+
+your public API is your contract with users of your crate that determines how they can interact with your code
+
+super = ..
+use super when referenced item is in the parent module
+
+structs can be public and their fields private at the same time. Each field also need the "pub" keyword to become public as well
+
+If an enum is public, all of its elements are public
