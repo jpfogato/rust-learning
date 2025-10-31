@@ -4,6 +4,7 @@ I intend to push updates as soon as chapters or subchapters are completed, with 
 
 The goal is to finish the book and all exercises in it (including the optional nes).
 
-A Cargo.toml is initialized at root folder so we can use rust-analyzer VSCode extension.
-All repositories initialized with `cargo` will allow for this extension's features.
-To compile and run a specific exercise, use `cargo run --bin <project>`
+A Cargo.toml is initialized at root folder
+
+To compile and run a specific exercise, use `cargo run --bin <project>` or `cargo build --lib`
+
