@@ -22,7 +22,7 @@ members = [
     "chapter_6/if_let_else",
     "chapter_7/packages_and_crates", 
     "chapter_7/modules",
-    "chapter_7/restaurant",
+    "chapter_7/restaurant", "chapter_7/path_keywords", "chapter_7/foobar",
     ] 
 
 resolver = "3"

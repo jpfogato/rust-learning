@@ -38,11 +38,18 @@ mod back_of_house {
 
 fn deliver_order() {}
 
+// brings the hosting from front_of_house into scope
+// pub here creates a re-export and allows code outside of this scope to also call code from
+// ::hosting
+pub use crate::front_of_house::hosting;
+
 pub fn eat_at_restaurant() {
     // absolute path: (preferred method)
-    crate::front_of_house::hosting::add_to_waitlist();
+    // crate::front_of_house::hosting::add_to_waitlist();
     // relative path:
     // front_of_house::hosting::add_to_waitlist();
+    // allws for a shorter path with the "use" keyword defined above
+    hosting::add_to_waitlist();
 
     // Order a breakfast in the summer with Rye toast
     let mut meal = back_of_house::Breakfast::summer("Rye"); // public associated function that constructs an instance of Breakfast

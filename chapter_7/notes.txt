@@ -77,8 +77,7 @@ To call a function from a module, we need to know its path
 
 It is preffered to use absolute paths for calling module's code as it is more likely we'll want to move code definitions and item calls independently of each other.
 
-use:
-
+To compile a library:
 cargo build -p|--package package_name to build a library-only cargo
 
 your public API is your contract with users of your crate that determines how they can interact with your code
@@ -89,3 +88,48 @@ use super when referenced item is in the parent module
 structs can be public and their fields private at the same time. Each field also need the "pub" keyword to become public as well
 
 If an enum is public, all of its elements are public
+
+The use keyword allows to create a shortcut to the path within the scope
+
+When bringing functions into scope with "use", do the idiomatic way, by referencing the parent, not all the way down to the function itself. Otherwise in the called code, it is not clear where the function is being called from. Example:
+
+use crate::parent::child
+pub fn foo() -> {
+    child::my_function()
+    }
+
+instead of:
+
+use crate::parent::child::my_function
+pub fn foo () -> {
+    my_function() // it is unclear where this function is defined
+    }
+
+For structs and enums, however, the oposite is idiomatic. Example:
+
+use std::collections::HashMap;
+fn foo(){
+    let mut map = HashMap::new();
+    map.insert(1,2); // map is a struct constructed by HashMap::new()
+    }
+
+The "use" keyword can bring nested paths into scope within the same line. Example:
+
+// do this:
+use std::{cmp::Ordering, io}; 
+
+// instead of this:
+use std::cmp:Ordering;
+use::std::io;
+
+// or this:
+use std::io::{self, Write};
+
+// instead of this:
+use std::io;
+use std::io::Write;
+
+Another possibility is to use the "glob" operator (*) to bring all public items defined into scope. Example:
+
+use std::collections::*;
+
